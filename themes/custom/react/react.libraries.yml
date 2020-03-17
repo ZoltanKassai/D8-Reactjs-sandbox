@@ -1,6 +1,9 @@
 react:
   version: 1.x
   header: true
+  css:
+    theme:
+      css/base.css: {}
   js:
     https://unpkg.com/react@16/umd/react.production.min.js: { external: true, minified: true }
     https://unpkg.com/react-dom@16/umd/react-dom.production.min.js: { external: true, minified: true }
@@ -8,5 +11,7 @@ react:
 react-app:
   version: 1.0.0
   footer: true
+  css:
+    css/base.css: {}
   js:
     js/index.js: { preprocess: 0, attributes: { type: text/babel } }

@@ -1,33 +1,19 @@
-class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { seconds: 0 };
-  }
-
-  tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
-    }));
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    return (
-      <div>
-        That's how many seconds I learn React: {this.state.seconds}
-      </div>
-    );
-  }
+function Person(props) {
+  return (
+    <div className="person">
+      <h1>{props.name}</h1>
+      <p>{props.age}</p>
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Timer />,
-  document.getElementById('react-app')
+var app = (
+  <div>
+    <Person name="Max" age="28" />
+    <Person name="Zoltan" age="48" />
+  </div>
+);
+
+ReactDOM.render(app,
+  document.querySelector('#react-app')
 );
